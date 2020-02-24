@@ -1,0 +1,24 @@
+{
+  "name": "ClankerTools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coolstuffss/ClankerTools.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coolstuffss/ClankerTools/issues"
+  },
+  "homepage": "https://github.com/coolstuffss/ClankerTools#readme",
+  "dependencies": {
+    "electron": "^8.0.1",
+    "fs": "0.0.1-security"
+  }
+}
