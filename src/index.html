@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DietApp | Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container active">
+    <div class="weather-side">
+        <div class="weather-gradient"></div>
+        <div class="date-container">
+        <h2 class="date-dayname" id="orologio">Lunedì</h2><span class="active date-day"></span><i class="location-icon" data-feather="map-pin"></i><span class="location">👤Seriano Kukaj</span>
+        </div>
+        <div class="weather-container"><i class="weather-icon" data-feather="sun"></i>
+        <h1 class="weather-temp">Low🍬</h1>
+        <h3 class="weather-desc active">Prossimo: </h3>
+        <h3 class="weather-desc">
+            <div class="prg-border">
+                <div class="prg-bar" id="bar1"></div>
+            </div>
+        </h3>
+        </div>
+    </div>
+    <div class="info-side">
+        <div class="today-info-container">
+        <div class="today-info">
+            <div class="precipitation"> <span class="title">Colazione</span><span class="value">Bacon, eggs and tomatoes.</span>
+            <div class="clear"></div>
+            </div>
+            <div class="humidity"> <span class="title">Pranzo</span><span class="value">Chicken salad with olive oil and feta cheese.</span>
+            <div class="clear"></div>
+            </div>
+            <div class="wind"> <span class="title">Cena</span><span class="value">Salmon with asparagus cooked in butter.</span>
+            <div class="clear"></div>
+            </div>
+        </div>
+        </div>
+        <div class="week-container">
+        <ul class="week-list">
+            <li class="active"><i class="day-icon"></i><span class="day-name"></span><span class="day-temp"></span></li>
+            <li><i class="day-icon"></i><span class="day-name"></span><span class="day-temp"></span></li>
+            <li><i class="day-icon"></i><span class="day-name"></span><span class="day-temp"></span></li>
+            <li><i class="day-icon"></i><span class="day-name"></span><span class="day-temp"></span></li>
+            <li><i class="day-icon"></i><span class="day-name"></span><span class="day-temp"></span></li>
+            <li><i class="day-icon"></i><span class="day-name"></span><span class="day-temp"></span></li>
+            <div class="clear"></div>
+        </ul>
+        </div>
+        <div class="location-container">
+        <!--<button class="location-button"><span></span></button>-->
+        </div>
+    </div>
+    </div>
+    <div class="infos slideInUp">
+        <div class="weather-side meals">
+            <div class="weather-gradient"></div>
+            <div class="date-container">
+            <h1 class="date-dayname">Colazione</h1><span class="date-day"></span><span class="location">👤Seriano Kukaj</span>
+            </div>
+            <div class="weather-container"><i class="weather-icon" data-feather="sun"></i>
+                <h1 class="weather-temp">Meal🍪</h1>
+                <h3 class="weather-desc">Bacon🥓</h3>
+                <h3 class="weather-desc">Eggs🍳</h3>
+                <h3 class="weather-desc">Tomatoes🍅</h3>
+            </div>
+        </div>
+        <div class="weather-side meals">
+            <div class="weather-gradient"></div>
+            <div class="date-container">
+            <h1 class="date-dayname">Pranzo</h1><span class="date-day"></span><span class="location">👤Seriano Kukaj</span>
+            </div>
+            <div class="weather-container"><i class="weather-icon" data-feather="sun"></i>
+                <h1 class="weather-temp">Meal🥓</h1>
+                <h3 class="weather-desc">Chicken Salad🍗</h3>
+                <h3 class="weather-desc">Olive Oil🥫</h3>
+                <h3 class="weather-desc">Feta Cheese🧀</h3>
+            </div>
+        </div>
+        <div class="weather-side meals">
+            <div class="weather-gradient"></div>
+            <div class="date-container">
+            <h1 class="date-dayname">Cena</h1><span class="date-day"></span><span class="location">👤Seriano Kukaj</span>
+            </div>
+            <div class="weather-container"><i class="weather-icon" data-feather="sun"></i>
+                <h1 class="weather-temp">Meal🍜</h1>
+                <h3 class="weather-desc">Salmon🍣</h3>
+                <h3 class="weather-desc">with Asparagus🥦</h3>
+                <h3 class="weather-desc">cooked🍳 in Butter</h3>
+            </div>
+        </div>
+    </div>
+    <!--Hey! This is the original version
+    of Simple CSS Waves-->
+    <div class="header">
+    <!--Waves Container-->
+    <div>
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+    <defs>
+    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+    </defs>
+    <g class="parallax">
+    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+    </g>
+    </svg>
+    </div>
+    <!--Waves end-->
+    </div>
+    <!--Header ends-->
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="script.js"></script>
+</html>
