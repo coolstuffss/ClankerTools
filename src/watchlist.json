@@ -9,7 +9,6 @@
                     "Title":"",
                     "ReleaseDate":"",
                     "Duration":"",
-                    "":"",
                     "ImagePath":"",
                     "FilePath":"",
                     "Watched":""
@@ -31,6 +30,7 @@
                     "ReleaseDate":"",
                     "ImagePath":"",
                     "Watched":"",
+                    "EpisodesNumber":"",
                     "Episodes":[
                         {
                             "Number":"",
@@ -46,24 +46,28 @@
             ]
         }
     ],
-    "Animes":[
+    "Mangas":[
         {
             "Title":"",
             "ReleaseDate":"",
             "Genre":"",
             "ImagePath":"",
             "Author":"",
-            "Chapters":[
+            "Parts":[
                 {
-                    "Number":"",
-                    "Title":"",
-                    "ReleaseDate":"",
-                    "ImagePath":"",
-                    "FilePath":"",
-                    "Pages":[
+                    "Chapters":[
                         {
                             "Number":"",
-                            "FilePath":""
+                            "Title":"",
+                            "ReleaseDate":"",
+                            "ImagePath":"",
+                            "FilePath":"",
+                            "Pages":[
+                                {
+                                    "Number":"",
+                                    "FilePath":""
+                                }
+                            ]
                         }
                     ]
                 }
