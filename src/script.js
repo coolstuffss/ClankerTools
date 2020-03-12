@@ -1,3 +1,5 @@
+
+/*
 const fs = require('fs');
 
 $('#search').on('click', () => {
@@ -10,3 +12,4 @@ $('#search').on('click', () => {
     }
 
 });
+*/
