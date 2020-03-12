@@ -55,6 +55,10 @@
             "Author":"",
             "Parts":[
                 {
+                    "Title":"",
+                    "Number":"",
+                    "ReleaseDate":"",
+                    "ImagePath":"",
                     "Chapters":[
                         {
                             "Number":"",

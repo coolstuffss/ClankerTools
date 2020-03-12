@@ -64,6 +64,10 @@
         "Author":"Hirohiko Araki",
         "Parts":[
             {
+                "Title":"",
+                "Number":"",
+                "ReleaseDate":"",
+                "ImagePath":"",
                 "Chapters":[
                     {
                         "Number":"",
