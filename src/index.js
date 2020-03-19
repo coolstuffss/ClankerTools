@@ -2,7 +2,7 @@ var resultInJson = undefined;
 
 $(document).ready(() => {
     $('#callAPI').click(() => {
-        fetch('https://localhost:5001/weatherforecast', {metod: 'GET'})
+        fetch('https://localhost:5001/api/weatherforecast', {metod: 'GET'})
         .then( res => res.json() )
         .then( result => {
             result.forEach(element => {
