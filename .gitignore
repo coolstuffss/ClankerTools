@@ -105,3 +105,6 @@ dist
 
 #vscode folder
 .vscode/
+
+#yarn lock file
+yarn.lock

@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
+const $ = require('jquery');
 
 function createWindow() {
 	const mainWindow = new BrowserWindow({
