@@ -1,0 +1,118 @@
+#appIcon {
+    width: 15px;
+    height: 15px;
+    padding: 5px;
+    filter: invert();
+    margin-left: 5px;
+}
+
+.title-bar {
+    -webkit-app-region: drag;
+    margin: 0;
+    display: flex;
+    background-color: #222;
+    width: 100%;
+    height: 20px;
+    font-size: 18px;
+}
+
+.menu-button-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    width: 30%;
+}
+
+.app-name-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    color: #ddd;
+    width: 40%;
+}
+
+.window-controls-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 30%;
+}
+
+#minimize-btn-container {
+    -webkit-app-region: no-drag;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 20px;
+}
+
+
+
+#minimize-btn-container:hover {
+    background-color: #444;
+}
+
+#minimize-button {
+    position: absolute;
+    -webkit-app-region: no-drag;
+    background-color: #ddd;
+    top: 12px;
+    width: 20px;
+    height: 2px;
+}
+#min-max-btn-container{
+    -webkit-app-region: no-drag;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 20px;
+  }
+  
+  #min-max-btn-container:hover {
+    background-color: #444;
+  }
+  
+  #min-max-button {
+    -webkit-app-region: no-drag;
+    position: absolute;
+    border:2px solid #ddd;
+    background: transparent;
+    width: 15px;
+    height: 15px;
+  }
+  
+.close-button {
+    -webkit-app-region: no-drag;
+    background-color: transparent;
+    width: 30px;
+    height: 20px;
+}
+
+.close-button:before,
+.close-button:after {
+    position: absolute;
+    content: ' ';
+    height: 20px;
+    width: 2px;
+    background-color: #ddd;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+}
+
+.close-button:before {
+    transform: rotate(45deg);
+}
+
+.close-button:after {
+    transform: rotate(-45deg);
+}
+
+.close-button:hover {
+    background-color: crimson;
+}

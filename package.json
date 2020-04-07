@@ -18,8 +18,13 @@
         "url": "https://github.com/coolstuffss/ClankerTools/issues"
     },
     "homepage": "https://github.com/coolstuffss/ClankerTools#readme",
+    "devDependencies": {
+        "electron": "^8.2.1",
+        "electron-reload": "^1.5.0",
+        "video.js": "^7.7.5"
+    },
     "dependencies": {
-        "electron": "^8.0.1",
-        "fs": "0.0.1-security"
+        "fs": "0.0.1-security",
+        "jquery": "^3.4.1"
     }
 }

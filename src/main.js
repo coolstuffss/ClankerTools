@@ -1,4 +1,6 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
+require('electron-reload')(__dirname);
+var $ = require("jquery");
     /*new customTitlebar.Titlebar({
       backgroundColor: customTitlebar.Color.fromHex('#444')
     });*/
@@ -6,17 +8,23 @@ function createWindow() {
     // Create the browser window.
 
     const win = new BrowserWindow({
-        width: 1000,
-        height: 1000,
+        minWidth: 500,
+        minHeight: 500,
+        frame: false,
+        hasShadow: false,
+        resizable: true,
         webPreferences: {
             nodeIntegration: true
         }
     })
-
+    /*________________________________________________________________________________________
+     *|    For disabling certain keyboard shortcuts:                                          |
+     *|    https://github.com/electron/electron/blob/master/docs/api/accelerator.md           |
+     *|_______________________________________________________________________________________|
+     */
     // and load the index.html of the app.
     win.loadFile('index.html')
-
-    win.maximize()
+    //win.maximize()
 }
 
 // This method will be called when Electron has finished
@@ -38,6 +46,13 @@ app.on('activate', () => {
     // dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0) {
         createWindow()
+    }
+})
+
+ipcMain.on('display-app-menu', (event, arg) => {
+    const appMenu = Menu.buildFromTemplate(template)
+    if(mainWindow) {
+      appMenu.popup(mainWindow, arg.x, arg.y)
     }
 })
 

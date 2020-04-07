@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css" />
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <script defer src="script.js"></script>
+    <script>
+        if (window.module) module = window.module;
+    </script>
+</head>
+
+<body class="content">
+    <a href="../home">HOME</a>
+    <a href="../video-player">PLAYER</a>
+    <a href="../video-player">PLAYER</a>
+    <!---->
+    <input type="text" name="Path" placeholder="Path" id="InputPath">
+    <input type="button" value="Search" id="search">
+    <select name="PathFound" id="PathFound">
+    </select>
+    <!---->
+    <!---->
+    <!---->
+</body>
+
+</html>

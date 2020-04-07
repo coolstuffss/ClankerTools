@@ -2,31 +2,163 @@
 <html>
 
 <head>
+    <!---->
     <meta charset="UTF-8" />
+    <!---->
     <title>Hello World!</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css" />
-    <script>
-        if (typeof module === 'object') {
-            window.module = module;
-            module = undefined;
-        }
-    </script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script defer src="script.js"></script>
-    <script>
-        if (window.module) module = window.module;
-    </script>
+    <!---->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/title-bar.css" />
+    <link rel="stylesheet" href="css/video-player.css" />
+    <!---->
+    <script defer src="js/script.js"></script>
+    <!---->
 </head>
 
-<body class="content">
-    
-    <!--
-    <input type="text" name="Path" placeholder="Path" id="InputPath">
-    <input type="button" value="Search" id="search">
-    <select name="PathFound" id="PathFound">
-    </select>
-    -->
+<body>
+    <!---->
+    <!--TITLE BAR-->
+    <div id="title-bar" class="title-bar">
+        <div class="menu-button-container">
+            <img id="appIcon" src="../assets/img/Republic_emblem.png">
+        </div>
+        <div class="app-name-container">
+            <p id="app-name-text">Clanker Tools</p>
+        </div>
+        <div class="window-controls-container">
+            <div id="minimize-btn-container">
+                <button id="minimize-button" class="minimize-button" />
+            </div>
+            <div id="min-max-btn-container">
+                <button id="min-max-button" class="min-max-button" />
+            </div>
+            <button id="close-button" class="close-button" />
+        </div>
+    </div>
+    <!--TITLE BAR-->
+    <div class="content">
+        <!---->
+        <!--TOP MENU-->
+        <div id="top-menu" class="top-menu">
+
+        </div>
+        <!--TOP MENU-->
+        <!---->
+        <!--SERIES CONTAINER-->
+        <div id="series-container" class="series-container">
+
+        </div>
+        <!--SERIES CONTAINER-->
+        <!---->
+        <!--FOOTER-->
+        <div id="footer" class="footer">
+
+        </div>
+        <!--FOOTER-->
+        <!---->
+    </div>
+    <!--TITLE BAR-->
+    <!---->
+    <!--SETTINGS MENU-->
+    <div id="settings-menu" class="settings-menu">
+
+    </div>
+    <!--SETTINGS MENU-->
+    <!---->
+    <!---->
+    <!--VIDEO PLAYER-->
+    <div id="video-player" class="video-player">
+        <div class="preview">
+            <canvas id="preview"></canvas>
+            <span id="preview-time">00:00</span>
+        </div>
+        <div class="video-container">
+          <!-- poster="K:\SERIE TV\Star Wars - The Clone Wars\poster.jpg" src="K:\SERIE TV\Star Wars - The Clone Wars\S05\05x16 - The Lawless.mp4"-->
+          <!-- poster="C:\Users\seria\OneDrive\poster.jpg" src="C:\Users\seria\Downloads\clone wars\e01.mp4"-->
+            <video poster="K:\SERIE TV\Star Wars - The Clone Wars\poster.jpg" src="K:\SERIE TV\Star Wars - The Clone Wars\S05\05x16 - The Lawless.mp4"></video>
+            <div class="controls-container">
+                <div class="progress-controls">
+                    <div class="progress-bar">
+                        <div class="watched-bar"></div>
+                        <div class="playhead"></div>
+                    </div>
+                    <div class="time-remaining">
+                        00:00
+                    </div>
+                </div>
+                <div class="controls">
+                    <button class="play-pause">
+              <svg class="playing" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              <svg class="paused" viewBox="0 0 24 24">
+                <rect x="6" y="4" width="4" height="16"></rect>
+                <rect x="14" y="4" width="4" height="16"></rect>
+              </svg>
+            </button>
+                    <button class="volume">
+              <svg class="full-volume" viewBox="0 0 24 24">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              </svg>
+              <svg class="muted" viewBox="0 0 24 24">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <line x1="23" y1="9" x2="17" y2="15"></line>
+                <line x1="17" y1="9" x2="23" y2="15"></line>
+              </svg>
+            </button>
+                    <p class="title">
+                        <span class="series">Series</span> <span class="episode">Episode</span>
+                    </p>
+                    <button class="help">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+            </button>
+                    <button class="next">
+              <svg viewBox="0 0 24 24">
+                <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                <line x1="19" y1="5" x2="19" y2="19"></line>
+              </svg>
+            </button>
+                    <button class="episodes">
+              <svg viewBox="0 0 24 24">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </button>
+                    <button class="picture-in-picture">
+                <svg viewBox="0 0 24 24">
+                   <g id="XMLID_6_">
+                       <path id="XMLID_11_" class="st0" d="M19.7,10.7h-8.8v6.6h8.7L19.7,10.7L19.7,10.7z M24,19.4V4.1c0-1.2-1-2.2-2.2-2.2H2.2
+                           C1,1.9,0,2.9,0,4.1v15.3c0,1.2,1,2.2,2.2,2.2h19.7C23,21.6,24,20.6,24,19.4z M21.8,19.4H2.2V4.1h19.7V19.4z"/>
+                   </g>
+                </svg>    
+            </button>
+                    <button class="full-screen">
+              <svg class="maximize" viewBox="0 0 24 24">
+                <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3">
+                </path>
+              </svg>
+              <svg class="minimize" viewBox="0 0 24 24">
+                <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3">
+                </path>
+              </svg>
+            </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--VIDEO PLAYER-->
+    <!---->
 </body>
+<script>
+    // You can also require other files to run in this process
+    require('./renderer.js');
+</script>
 
 </html>

@@ -1,0 +1,208 @@
+.video-player {
+    width: 100%;
+    height: calc(100% - 20px);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: transparent;
+    z-index: 30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+
+.video-player .video-container {
+    width: 100%;
+    height: calc(100% - 20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-player .video-container video {
+    width: 100vw;
+    height: 100vh;
+}
+
+.video-player .video-container .controls-container {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 40vh;
+    /* Thanks to theArtifacts */
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
+    transition: opacity 0.5s linear;
+}
+
+.video-player .video-container .progress-controls .progress-bar:hover .playhead {
+    display: flex;
+    transition: .2s ease;
+}
+
+.video-player .video-container .progress-controls {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.video-player .video-container .progress-controls .time-remaining {
+    margin: 5px;
+}
+
+.video-player .video-container .progress-controls .progress-bar {
+    width: 90%;
+    height: 1vw;
+    max-height: 7px;
+    background: #5B5B5B;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.video-player .video-container .progress-controls .progress-bar .watched-bar,
+.video-player .video-container .progress-controls .progress-bar .playhead {
+    background: #E31221;
+    display: inline-block;
+    transition: all 0.2s;
+}
+
+.video-player .video-container .progress-controls .progress-bar .watched-bar {
+    height: 110%;
+    width: 20%;
+}
+
+.video-player .video-container .progress-controls .progress-bar .playhead {
+    height: 1.5vw;
+    width: 1.5vw;
+    display: none;
+    max-height: 25px;
+    max-width: 25px;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    transition: .2s ease;
+}
+
+.preview {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    background: #161616;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    border: 5px solid green;
+    transform: scale(0.7);
+}
+
+
+/*canvas*/
+
+#preview {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    border: 1px solid blue;
+}
+
+#preview-time {
+    color: #ddd;
+    display: flex;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+    border: 1px solid red;
+}
+
+.video-player .video-container .controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.video-player .video-container .controls button {
+    background: none;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    width: 5vw;
+    height: 5vw;
+    min-width: 50px;
+    min-height: 50px;
+    margin: 0px 1vw;
+    opacity: 0.4;
+    transform: scale(0.9);
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+}
+
+.video-player .video-container .controls button:hover {
+    opacity: 1;
+    transform: scale(1.06);
+}
+
+.video-player .video-container .controls button svg {
+    fill: white;
+    stroke: white;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    width: 100%;
+    height: 100%;
+}
+
+.video-player .video-container .controls .picture-in-picture svg {
+    stroke-width: 0;
+}
+
+.video-player .video-container .controls button.volume svg path,
+.video-player .video-container .controls button.help svg,
+.video-player .video-container .controls button.episodes svg,
+.video-player .video-container .controls button.full-screen svg,
+.video-player .video-container .controls button.volume svg path,
+.video-player .video-container .controls button.cast svg {
+    fill: none;
+}
+
+.video-player .video-container .controls button.rewind svg,
+.video-player .video-container .controls button.fast-forward svg {
+    stroke: none;
+}
+
+.video-player .video-container .controls button.captions svg {
+    stroke: none;
+}
+
+.video-player .video-container .controls .title {
+    font-size: 1.5em;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .video-player .video-container .controls .title {
+        display: none;
+    }
+}
+
+.video-player .video-container .controls .title .series {
+    color: #FEFEFE;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.video-player .video-container .controls .title .episode {
+    color: #A1A1A1;
+    font-size: 0.75em;
+    padding-left: 1vw;
+}
