@@ -44,6 +44,7 @@ const watchedBar = document.querySelector('.video-container .progress-controls .
 const timeLeft = document.querySelector('.video-container .progress-controls .time-remaining');
 
 let controlsTimeout;
+let previewTimeout;
 controlsContainer.style.opacity = '0';
 watchedBar.style.width = '0px';
 pauseButton.style.display = 'none';
@@ -173,37 +174,53 @@ progressBar.addEventListener('click', (event) => {
     
 });
 
-var timeout;
 const videoSrc = $('.video-container video').attr('src');
 var videoPrev = document.createElement('video');
 videoPrev.src = videoSrc;
 
-progressBar.addEventListener('mousemove', (event) => {
-    if (timeout !== undefined) {
-        window.clearTimeout(timeout);
-    }
-    timeout = window.setTimeout(function() {
-        // trigger the new event on event.target, so that it can bubble appropriately.
-        $(event.target).trigger('mousemoveend');
-    }, 100);
+progressBar.addEventListener('mousemove', async (event) => {
+    await displayPreviewBox(event);
+});
 
+async function displayPreviewBox(event){
+    $('.preview').css('opacity','1');
+    if (previewTimeout) {
+        clearTimeout(previewTimeout);
+    }
+    previewTimeout = setTimeout(() => {
+        $('.preview').css('opacity','0');
+    }, 2000);
+    
     const pos = (event.pageX - (progressBar.offsetLeft + progressBar.offsetParent.offsetLeft)) / progressBar.offsetWidth;
     
-    const left = event.clientX - ($('.preview').outerWidth() / 2);
-    $('.preview').css('left', left < 0 ? (left > $('body').width() ? $('body').width() - ($('.preview').outerWidth() / 2) : 0) : left);
+    var left = event.clientX - ($('.preview').outerWidth() / 2);
+    //left < 0 ? (left > $('body').width() ? $('body').width() - ($('.preview').outerWidth() / 2) : 0) : left
     
-    const top = $('.progress-bar').offset().top - $('.preview').outerHeight() + 15;
+    if(left < 0){
+        left = 10;
+    }else if(left > ($('body').outerWidth() - $('.preview').outerWidth())){
+        //console.log(`outer=${$('body').outerWidth()}\ninner:${$('body').width()}`)
+        left = $('body').width() - ($('.preview').outerWidth()) - 10;
+    }else{
+        left;
+    }
+
+    $('.preview').css('left', left);
+    
+    var top = $('.progress-bar').offset().top - $('.preview').outerHeight() - 5;
     $('.preview').css('top', top);
 
     const currentTime = (new Date((pos * video.duration) * 1000).toISOString().substr(11, 8));
     //console.log(currentTime);
     $('#preview-time').html(currentTime != "00:00" ? currentTime.replace('00:','') : currentTime);
-    updatePreview(videoPrev,pos * video.duration);
-});
+    await updatePreview(videoPrev,pos * video.duration);
+}
 
-function updatePreview(videoPrev,time) {
+async function updatePreview(videoPrev,time) {
     const canvas = document.getElementById('preview');
     var ctx = canvas.getContext('2d');
+    $('#preview').css('width','200');
+    $('#preview').css('height','112.5');
     var size = {
         width: canvas.width,
         height: canvas.height
@@ -211,9 +228,8 @@ function updatePreview(videoPrev,time) {
 
     videoPrev.currentTime = time;
 
-    ctx.drawImage(videoPrev, 0, 0, canvas.width, videoPrev.height);
-
-    console.log(`src=${videoSrc}\ncanvas{width:${size.width},height:${size.height}}`)
+    ctx.drawImage(videoPrev, 0, 0, size.width, size.height);
+    //console.log(`src=${videoSrc}\ncanvas{width:${size.width},height:${size.height}}`)
 }
 
 progressBar.addEventListener('mousemoveend', () => {

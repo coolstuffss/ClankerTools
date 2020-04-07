@@ -1,5 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
-require('electron-reload')(__dirname);
+const i = require('electron-reload')(__dirname);
 var $ = require("jquery");
     /*new customTitlebar.Titlebar({
       backgroundColor: customTitlebar.Color.fromHex('#444')
