@@ -1,11 +1,14 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
-const $ = require('jquery');
 
 function createWindow() {
 	const mainWindow = new BrowserWindow({
-		width: 900,
-		height: 900,
+		width: 1500,
+		height: 1000,
+		webPreferences: {
+			nodeIntegration: true,
+			preload: path.join(__dirname, 'src/preload.js')
+		}
 	});
 
 	mainWindow.loadFile('public/index.html');
