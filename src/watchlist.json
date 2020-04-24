@@ -1,6 +1,7 @@
 {
     "MovieSeries":[
         {
+            "Id":"",
             "Title":"",
             "Genre":"",
             "Watched":"",
@@ -18,24 +19,24 @@
     ],
     "TvSeries":[
         {
+            "Id":"",
             "Title":"",
             "ReleaseDate":"",
             "Genre":"",
             "ImagePath":"",
-            "Watched":"",
+            "lastWatched":"",
             "Seasons":[
                 {
                     "Number":"",
                     "Title":"",
                     "ReleaseDate":"",
                     "ImagePath":"",
-                    "Watched":"",
+                    "lastWatched":"",
                     "EpisodesNumber":"",
                     "Episodes":[
                         {
                             "Number":"",
                             "Title":"",
-                            "ReleaseDate":"",
                             "Duration":"",
                             "ImagePath":"",
                             "FilePath":"",
@@ -48,6 +49,7 @@
     ],
     "Mangas":[
         {
+            "Id":"",
             "Title":"",
             "ReleaseDate":"",
             "Genre":"",

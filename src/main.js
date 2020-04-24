@@ -13,6 +13,7 @@ function createWindow() {
         frame: false,
         hasShadow: false,
         resizable: true,
+        icon:'../assets/img/icon.png',
         webPreferences: {
             nodeIntegration: true
         }
